@@ -1,0 +1,38 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+
+
+
+def numToFactorial(inputNumber):
+    
+    total = 1
+    
+    if inputNumber > 1:
+        for number in range(1, inputNumber + 1):
+            total = total * number
+            
+    return total
+    
+def sumOfDigits(number):
+    strNum = str(number)
+    sumTotal = 0
+    
+    for char in strNum:
+        sumTotal += int(char)
+    
+    return sumTotal
+    
+
+def factorialDigitSum(number):
+    
+    factorial = numToFactorial(number)
+    digitSum = sumOfDigits(factorial)
+    
+    return digitSum
+
+print(factorialDigitSum(100))

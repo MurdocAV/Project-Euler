@@ -1,0 +1,25 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+
+
+
+def SumOfDigits(strNum):#Returns sum of all digits given a str of Number
+    total = 0
+    for i in range(0,len(strNum)):
+        #print(strNum[i])
+        total += int(strNum[i])
+    return total
+def ConvertNumToStr(number):
+    return(str(number))
+    
+#print(type(ConvertNumToStr(2)))
+
+aws = ConvertNumToStr(2**1000)
+totalSum = SumOfDigits(aws)
+
+print(totalSum)

@@ -1,0 +1,12 @@
+fib = [1,1]
+condition = True
+while condition:
+  fib.append(fib[-2] + fib[-1])
+
+  if len(str(fib[-1])) == 1000:
+    answer = fib[-1]
+    location = fib.index(answer)
+    print(location + 1)
+    print(answer)
+    condition = False
+

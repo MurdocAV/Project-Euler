@@ -13,27 +13,3 @@ def isprime(n):
             if n % i == 0:
                 return False
         return True
-
-
-def nthPrime(n):
-    
-    condition = True
-    primesList = []
-    totalPrimes = len(primesList)
-    currentNumber = 1
-    
-    while condition:
-        
-        if totalPrimes >= n:
-            condition = False
-            
-        if isprime(currentNumber):
-            primesList.append(currentNumber)
-        
-        totalPrimes = len(primesList)
-        currentNumber += 1
-    
-    return primesList[-1]
-
-print(nthPrime(10001))
-print("Time: " + str(process_time()) + "s")

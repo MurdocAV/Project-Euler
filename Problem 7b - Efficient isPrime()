@@ -1,0 +1,39 @@
+from time import process_time
+from math import sqrt, floor
+
+def isprime(n):
+    if n == 1:
+        return False
+    elif n == 2:
+        return True
+    elif n > 2 and n % 2 == 0:
+        return False
+    else:
+        for i in range(3, int(floor(sqrt(n))) + 1, 2):  # Ignore all the even numbers
+            if n % i == 0:
+                return False
+        return True
+
+
+def nthPrime(n):
+    
+    condition = True
+    primesList = []
+    totalPrimes = len(primesList)
+    currentNumber = 1
+    
+    while condition:
+        
+        if totalPrimes >= n:
+            condition = False
+            
+        if isprime(currentNumber):
+            primesList.append(currentNumber)
+        
+        totalPrimes = len(primesList)
+        currentNumber += 1
+    
+    return primesList[-1]
+
+print(nthPrime(10001))
+print("Time: " + str(process_time()) + "s")

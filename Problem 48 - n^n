@@ -1,0 +1,17 @@
+import math
+import random
+
+
+def findLastDigitOfSelfPowersUpToN(n, maxDigits):
+    totalNumber = 0
+
+    for i in range(1, n):
+        totalNumber += i ** i
+
+    totalNumber = str(totalNumber)
+    length = len(totalNumber)
+
+    LastDigits = totalNumber[-maxDigits:]
+    return LastDigits
+  
+print(findLastDigitOfSelfPowersUpToN(1001, 10))

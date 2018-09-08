@@ -1,0 +1,44 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+
+import time
+import math
+
+def getNthPrime(NthPrime):
+    #Local Data Fields
+    primesList = [2]
+    
+    #While Loop Variables
+    count = len(primesList)
+    number = 3
+    
+    while count < NthPrime:
+        
+        for prime in primesList:
+            if number % prime == 0:
+                break
+            elif prime == primesList[-1]:
+                primesList.append(number)        
+        
+        number += 2 #incrementing loop by two, only includes odd numbers
+        count = len(primesList)
+        
+    return primesList
+    
+def main(NthPrime):
+    
+    start_time = time.time()
+    
+    primesList = getNthPrime(NthPrime)
+    lastPrime = primesList[-1]
+    
+    
+    print("Prime number {} is: ".format(NthPrime) + str(lastPrime))
+    print("Answer delivered in %s seconds" % (round(time.time() - start_time, 4)))
+
+main(10001)

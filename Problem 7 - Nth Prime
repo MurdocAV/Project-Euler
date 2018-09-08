@@ -1,36 +1,39 @@
 import time
 import math
 
-def getNthPrime(NthPrime):
-    #Local Data Fields
-    primesList = [2]
-    
-    #While Loop Variables
-    count = len(primesList)
-    number = 3
-    
-    while count < NthPrime:
-        
-        for prime in primesList:
-            if number % prime == 0:
-                break
-            elif prime == primesList[-1]:
-                primesList.append(number)        
-        
-        number += 2 #incrementing loop by two, only includes odd numbers
-        count = len(primesList)
-        
-    return primesList
-    
-def main(NthPrime):
-    
-    start_time = time.time()
-    
-    primesList = getNthPrime(NthPrime)
-    lastPrime = primesList[-1]
-    
-    
-    print("Prime number {} is: ".format(NthPrime) + str(lastPrime))
-    print("Answer delivered in %s seconds" % (round(time.time() - start_time, 4)))
+def isprime(n):
+    if n == 1:
+        return False
+    elif n == 2:
+        return True
+    elif n > 2 and n % 2 == 0:
+        return False
+    else:
+        for i in range(3, int(floor(sqrt(n))) + 1, 2):  # Ignore all the even numbers
+            if n % i == 0:
+                return False
+        return True
 
-main(10001)
+
+def nthPrime(n):
+    
+    condition = True
+    primesList = []
+    totalPrimes = len(primesList)
+    currentNumber = 1
+    
+    while condition:
+        
+        if totalPrimes >= n:
+            condition = False
+            
+        if isprime(currentNumber):
+            primesList.append(currentNumber)
+        
+        totalPrimes = len(primesList)
+        currentNumber += 1
+    
+    return primesList[-1]
+
+print(nthPrime(10001))
+print("Time: " + str(process_time()) + "s")

@@ -1,0 +1,63 @@
+#Note this method did not work well, use sieves formula for a faster result to find primes
+
+def listOfPrimes(maxNum):
+    
+    primesList = [2]
+    
+    for n in range(3,maxNum + 1,2):
+        
+        if len(factors(n)) == 2:
+            primesList.append(n)
+        return primesList
+
+"""
+def factors(number):
+    
+    factorsList = []
+    originalNum = number
+    
+    for n in range(1,originalNum + 1):
+        if number % n == 0:
+            factorsList.append(n)
+            #number = number / 2
+    return factorsList
+"""
+
+"""
+def factors(number, primesList):
+    
+    factorsList = []
+    for n in range(1, number):
+"""
+
+
+"""
+def factors(number):
+    biggestPossibleFactor = number
+    factorsList = [1,number]
+    for n in range(2,number + 1):
+        if n >= biggestPossibleFactor:
+            return factorsList
+        if number % n == 0:
+            factorsList.append(n) 
+            biggestPossibleFactor = int(number / n)
+        if biggestPossibleFactor not in factorsList:
+            factorsList.append(biggestPossibleFactor)
+            
+    return factorsList
+"""
+
+
+def sumPrimes(primesList): 
+    # For loop isn't too inefficent
+    total = 0
+    for n in primesList:
+        total += n
+        return total
+
+def main():
+    primesList = listOfPrimes(200000)
+    print(primesList)
+    print(sumPrimes(primesList))
+
+main()

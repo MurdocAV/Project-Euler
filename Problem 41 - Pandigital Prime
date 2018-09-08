@@ -1,4 +1,4 @@
-#Note this method did not work well, use sieves formula for a faster result to find primes
+#Note this method did not work, use sieves formula for a faster result to find primes
 
 def listOfPrimes(maxNum):
     

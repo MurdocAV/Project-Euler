@@ -1,0 +1,37 @@
+import time
+import math
+
+def multiplesOfNOrM(n, m, maxNum):
+    #Note is below maxNum not including
+    
+    nMultiples = []
+    mMultiples = []
+    bothMultiples = []
+    
+    for num in range(m, maxNum, m):
+        mMultiples.append(num)
+        if num % n == 0:
+            bothMultiples.append(num)
+        
+    for num in range(n, maxNum, n):
+        nMultiples.append(num)
+        
+        
+    sumOfMultiples = sum(nMultiples) + sum(mMultiples) - sum(bothMultiples)
+    return(sumOfMultiples)
+    
+    
+def main():
+    start_time = time.time()
+    
+    n = 3
+    m = 5
+    maxNumber = 1000
+    
+    sumOfMultiples = multiplesOfNOrM(n,m, maxNumber)
+    
+    print("The sum of the multiples of {} or {} below {} are: {}" .format(n, m, maxNumber, sumOfMultiples))
+    print("Runtime = %s seconds" % (round((time.time() - start_time), 6)))
+    
+        
+main()    

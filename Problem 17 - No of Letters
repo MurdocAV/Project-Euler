@@ -1,11 +1,18 @@
-'''
+def countLetters(numberInString): #Takes Number written out in String(works with int_to_en format) and returns letters in it
+    letterTotal = 0
+    for char in numberInString:
+        if (char.isalpha() == True):
+            letterTotal += 1
+    return letterTotal # (return type int)
 
-                            Online Python Compiler.
-                Code, Compile, Run and Debug python program online.
-Write your code in this editor and press "Run" button to execute it.
-
-'''
-
+def countNumberOfLetters (start, stop): # Takes start stop (int) and calculates the the sum of all numbers written out (lang = english)
+    totalCount = 0
+    for number in range(start, stop +1):
+        strNum = int_to_en(number)
+        totalCount += countLetters(strNum)
+    
+    return totalCount
+    
 #imported code to turn int to str (tested and is compatible with problem's syntax)
 def int_to_en(num):
     d = { 0 : 'zero', 1 : 'one', 2 : 'two', 3 : 'three', 4 : 'four', 5 : 'five',
@@ -49,21 +56,7 @@ def int_to_en(num):
     else: return int_to_en(num // t) + ' trillion, ' + int_to_en(num % t)
 
     raise AssertionError('num is too large: %s' % str(num))
-
-
-def countLetters(numberInString): #Takes Number written out in String(works with int_to_en format) and returns letters in it
-    letterTotal = 0
-    for char in numberInString:
-        if (char.isalpha() == True):
-            letterTotal += 1
-    return letterTotal # (return type int)
-
-def countNumberOfLetters (start, stop): # Takes start stop (int) and calculates the the sum of all numbers written out (lang = english)
-    totalCount = 0
-    for number in range(start, stop +1):
-        strNum = int_to_en(number)
-        totalCount += countLetters(strNum)
     
-    return totalCount
+    
     
 print(countNumberOfLetters(1, 1000))

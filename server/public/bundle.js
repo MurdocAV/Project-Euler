@@ -135,7 +135,7 @@ function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to the mathematical bender that is Project Euler"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Leonhard you bastard! How'd you solve these problems back in your day?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
         strict: true,
         from: "/",
         to: "/31"
@@ -212,7 +212,12 @@ function (_React$Component) {
       var target = 200; //representational of £2
 
       var denominations = [1, 2, 3, 5, 10, 20, 50, 100];
-      denominations.forEach();
+      var noOfSolutions;
+      /* 
+      How to have differnt unique ways.
+      Think of soultion before using code...
+      1. Combinations? (But 8 different inputs?)
+      */
     }
   }, {
     key: "render",

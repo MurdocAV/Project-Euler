@@ -8,6 +8,9 @@ class App extends React.Component {
   render () {
     return (
       <HashRouter>
+        <h1>Welcome to the mathematical bender that is Project Euler</h1>
+        <br></br>
+        <p>Leonhard you bastard! How'd you solve these problems back in your day?</p>
         <Redirect strict from="/" to="/31" />
         <Route exact path="/31" component={Problem31} />
       </HashRouter>

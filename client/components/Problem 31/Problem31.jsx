@@ -18,9 +18,14 @@ class Problem31 extends React.Component {
   twoPounds () {
     const target = 200 //representational of £2
     const denominations = [1, 2, 3, 5, 10, 20, 50, 100]
+    
+    let noOfSolutions
 
-    denominations.forEach()
-
+    /* 
+    How to have differnt unique ways.
+    Think of soultion before using code...
+    1. Combinations? (But 8 different inputs?)
+    */
   }
 
   render () {

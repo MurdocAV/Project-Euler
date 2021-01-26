@@ -1,0 +1,20 @@
+let product = 1000;
+let a; let b; let c;
+
+// NB -> a < b < c
+
+aSq = a*2
+bSq = b*2
+cSq = aSq + bSq
+// aSq + bSq + cSq = 1000 (product)
+
+function checkComparisons(a,b,c) {
+  if (a <  b) {
+    if (b < c) {
+      if (a < c) {
+        return true;
+      } else console.log("a value is larger than c value");
+    } else console.log("b value is larger than c!");
+  } else console.log("a value is larger than b value");
+  return false;
+}

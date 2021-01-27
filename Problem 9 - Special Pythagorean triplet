@@ -1,14 +1,12 @@
-let product = 1000;
-let a; let b; let c;
 let endLoop = false;
 
 // NB -> a < b < c && a,b,c element of natural numbers
 // O complex (n^3) how to simplify? factorize;
 
-aSq = a*2
-bSq = b*2
-cSq = aSq + bSq
-// aSq + bSq + cSq = 1000 (product)
+// aSq = a*2
+// bSq = b*2
+// cSq = aSq + bSq
+// // aSq + bSq + cSq = 1000 (product)
 
 function checkComparisons(a,b,c) {
   if (a <  b) {
@@ -21,11 +19,17 @@ function checkComparisons(a,b,c) {
   return false;
 }
 
-console.log(checkComparisons(1,2,3))
-
 // Don't accept simple O(n^3)
 // c < 1000
 
-for (c = 0; endLoop != true; c++ ) {
-    
+function checkPythagoreanTrip(sum) {
+    for (let a = 1; endLoop === true; a++) {
+        for (let b = 2; endLoop === true; b++) {
+            for (let c = 3; endLoop === true; c++) {
+                if (a^2 + b^2 === c^2 && checkComparisons(a,b,c) === true) {
+                    console.log(`A is ${a} B is ${b} C is ${c}`);
+                }
+            }
+        }
+    }
 }
